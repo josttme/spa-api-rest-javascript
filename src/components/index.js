@@ -1,0 +1,8 @@
+import './more-category-component'
+import './generic-category'
+import './search-component'
+import './movie-page-component'
+import './movie-component'
+import './collection-component'
+import './collections-home'
+import './my-list-component'

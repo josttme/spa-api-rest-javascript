@@ -1,0 +1,194 @@
+@import '../utils/variables';
+:host {
+	display: block;
+	background: rgb(0, 45, 107);
+	background: linear-gradient(
+		0deg,
+		rgba(0, 45, 107, 1) 20%,
+		rgba(0, 45, 107, 0.7567401960784313) 55%,
+		rgba(0, 45, 107, 0.11528361344537819) 100%
+	);
+	overflow: hidden;
+	padding-bottom: 1rem !important;
+}
+.container {
+	display: block;
+	width: 90%;
+	margin: 0 auto;
+}
+.backgrop-image {
+	position: fixed;
+	top: 3%;
+	left: 0;
+	width: 100%;
+	height: 25rem;
+	overflow: hidden;
+	display: grid;
+	place-content: center;
+	z-index: -1;
+}
+.backgrop-image .gradient {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/* 	background: rgb(0, 11, 59);
+			background: linear-gradient(
+				0deg,
+				rgba(0, 11, 59, 1) 5%,
+				rgba(0, 11, 59, 0.7147233893557423) 25%,
+				rgba(0, 45, 107, 0) 100%
+			); */
+	background: rgb(0, 45, 107);
+	background: linear-gradient(
+		0deg,
+		rgba(0, 45, 107, 1) 6%,
+		rgba(0, 45, 107, 0.5690651260504201) 22%,
+		rgba(0, 45, 107, 0) 100%
+	);
+}
+.backgrop-image img {
+	width: 100%;
+	scale: 1.5;
+}
+.movie-info {
+	height: 100%;
+	width: 100%;
+	padding-top: 35%;
+	display: grid;
+	grid-template-columns: 160px 1fr;
+	grid-template-areas:
+		'poster-image rating-watchlist'
+		'title-year title-year'
+		'description description';
+	//background-color: blueviolet;
+}
+.content-poster-image {
+	width: 150px;
+	height: 232px;
+	background-color: #06459b;
+	border-radius: 8px;
+	overflow: hidden;
+}
+.poster-image {
+	grid-area: poster-image;
+	width: 100%;
+	height: 100%;
+}
+.rating-container {
+	margin: 0.2rem 0;
+}
+.movie-info {
+	width: 100%;
+	height: 100%;
+}
+
+.title,
+.release-year {
+	display: inline;
+	font-size: 1.5rem;
+	margin: 0;
+}
+
+.related-movies {
+	display: block;
+	overflow: scroll;
+	overflow: hidden;
+}
+
+.watchlist {
+	display: grid;
+	place-content: center;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: $black;
+	border: 2px rgba($white, 0.7) solid;
+	cursor: pointer;
+	&-add,
+	&-check {
+		width: 35px;
+		height: 35px;
+		fill: rgba($white, 0.7);
+	}
+	&-check {
+		fill: $secondary-color;
+	}
+	&:hover {
+		background-color: rgba($white, 0.7);
+	}
+	&:hover .watchlist-add {
+		fill: $black;
+	}
+	.hidden {
+		display: none;
+	}
+}
+.added {
+	background-color: rgba($black, 0.9);
+}
+.container-title-year {
+	grid-area: title-year;
+	margin: 0.5rem 0 1rem;
+}
+.container-rating-watchlist {
+	grid-area: rating-watchlist;
+	align-self: end;
+}
+.description {
+	grid-area: description;
+}
+@media screen and (min-width: 1000px) {
+	:host {
+		background: none;
+	}
+	.backgrop-image {
+		height: auto;
+		overflow: initial;
+	}
+	.backgrop-image .gradient {
+		background: $base-color;
+		background: $gradient-color;
+	}
+	.backgrop-image img {
+		width: 100vw;
+		scale: 1;
+	}
+	.container {
+		width: 100%;
+		height: auto;
+		max-width: 1000px;
+	}
+
+	.title,
+	.release-year {
+		font-size: 2rem;
+	}
+	.vote {
+		font-size: 1.5rem;
+	}
+
+	.description {
+		font-size: 1.5rem;
+		padding: 1rem;
+		background: rgb($base-color, 0.6);
+		border-radius: 8px;
+	}
+	.content-poster-image {
+		width: 200px;
+		min-height: 300px;
+		height: auto;
+	}
+	.movie-info {
+		padding-top: 15%;
+		grid-template-columns: 220px 1fr;
+	}
+}
+@media (min-width: 1200px) {
+	.description {
+		width: 120%;
+		font-size: 1.4rem;
+		margin-left: -10%;
+	}
+}

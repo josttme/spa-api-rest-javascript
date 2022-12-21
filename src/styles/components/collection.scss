@@ -1,0 +1,113 @@
+@import '../utils/variables'; // Variables
+$handle-size: 9rem;
+$slider-padding: 6.5%;
+$img-gap: 0.25rem;
+:host {
+	display: block;
+	width: 100%;
+	h4 {
+		font-size: 1.2rem;
+		margin: 1rem 0 0 0.25rem;
+	}
+	& .container {
+		display: flex;
+		justify-content: center;
+		overflow: hidden;
+		&-slider {
+			display: flex;
+			width: 100%;
+			overflow-x: scroll;
+			transition: transform 250ms ease-in-out;
+			&::-webkit-scrollbar {
+				display: none;
+			}
+		}
+		&-handle {
+			display: none;
+		}
+	}
+}
+:host-context(generic-category-component),
+:host-context(my-list) {
+	max-width: 1000px;
+	margin: 0 auto;
+	h4 {
+		padding: 0.5rem;
+	}
+	& .container {
+		width: 100%;
+		&-slider {
+			gap: 0;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+		}
+		&-handle {
+			display: none;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	:host-context(generic-category-component),
+	:host-context(my-list) {
+		.container-slider {
+			gap: 1rem;
+		}
+	}
+}
+@media (min-width: 1000px) {
+	:host {
+		h4 {
+			padding: 0.5rem calc($img-gap * 2 + $handle-size);
+		}
+		.container {
+			&-slider {
+				margin: 0 $img-gap;
+				overflow-x: initial;
+			}
+			&-handle {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border: none;
+				border-radius: 10px;
+				flex-shrink: 0;
+				background-color: rgba($black, 0.7);
+				margin: $img-gap 0;
+				width: $handle-size;
+				cursor: pointer;
+				transition: background-color 150ms ease-in-out;
+				&-left {
+					border-top-left-radius: 0;
+					border-bottom-left-radius: 0;
+				}
+				&-right {
+					border-top-right-radius: 0;
+					border-bottom-right-radius: 0;
+					& img {
+						transform: rotate(180deg);
+					}
+				}
+				&:hover,
+				&:focus {
+					background-color: rgba($black, 0.9);
+				}
+				& img {
+					width: 25%;
+					opacity: 0.5;
+					transition: 250ms ease-in-out;
+				}
+				&:hover img {
+					opacity: 1;
+					scale: 1.1;
+				}
+			}
+		}
+	}
+	:host-context(generic-category-component),
+	:host-context(my-list) {
+		.container-slider {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+}

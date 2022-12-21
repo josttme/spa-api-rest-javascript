@@ -1,0 +1,7 @@
+const $ = (id) => document.querySelector(id)
+const genericCategoryContainer = $('#genericCategoryContainer')
+const homeContainer = $('#homeContainer')
+const arrow = $('#arrow')
+const movieContainer = $('#movieContainer')
+const titlePage = $('#titlePage')
+const myListBtn = $('#myListBtn')

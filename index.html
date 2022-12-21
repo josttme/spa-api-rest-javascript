@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href="https://dl.dropboxusercontent.com/s/krhcb2uytgl2fow/JosttMe.png"
+		/>
+		<title>JosttMovies</title>
+	</head>
+	<body>
+		<section
+			class="w-full h-12 bg-[#002d6b] z-20 xl:h-12 pl-2 pf-2 fixed grid grid-cols-[20%_1fr_20%] items-center text-center"
+		>
+			<div class="w-10 h-full ml-1 xl:ml-6 grid place-content-center">
+				<img id="arrow" src="/src/static/arrow-left.svg" />
+			</div>
+			<h1
+				id="titlePage"
+				class="cursor-pointer font-bold inline-block w-36 ml-auto mr-auto text-2xl text-[rgba(255,255,255,.6)]"
+			>
+				JosttMovies
+			</h1>
+			<span id="myListBtn" class="font-bold text-lg cursor-pointer text-[rgba(255,255,255,.6)]"
+				>Mi lista</span
+			>
+		</section>
+		<section class="pt-8" id="homeContainer"></section>
+		<section class="pt-8" id="genericCategoryContainer"></section>
+		<section class="pt-10" id="movieContainer"></section>
+		<script type="module" src="/src/main.js"></script>
+	</body>
+</html>
