@@ -5,6 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
+		"deploy": "gh-pages -d dist",
 		"build": "vite build",
 		"preview": "vite preview",
 		"server": "json-server --port 1111 ./db.json"
@@ -46,6 +47,7 @@
 		"fill-range": "^7.0.1",
 		"fraction.js": "^4.2.0",
 		"function-bind": "^1.1.1",
+		"gh-pages": "^4.0.0",
 		"glob-parent": "^6.0.2",
 		"has": "^1.0.3",
 		"is-binary-path": "^2.1.0",
