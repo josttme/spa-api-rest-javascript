@@ -31,6 +31,7 @@ export const render = (path) => {
 export const goTo = (path) => {
 	if (location.pathname !== path) {
 		window.history.pushState({ path }, path, path)
+		console.log(path)
 		render(path)
 	} else {
 		window.history.replaceState({ path }, path, path)

@@ -8,5 +8,5 @@ export default defineConfig({
 		hmr: true,
 	},
 	plugins: [TemplatePlugin()],
-	base: '/spa-api-rest-javascript/',
+	base: '/',
 })
